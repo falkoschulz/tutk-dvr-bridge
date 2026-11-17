@@ -108,6 +108,13 @@ cp config/config.example.json config/config.json
 }
 ```
 
+### Finding Your DVR's 20-Character TUTK UID
+
+You can obtain the 20-character `uid` from any of the following:
+- **DVR Hardware / OSD:** Printed on the label/sticker on the DVR unit, or shown in the DVR's local **Network / P2P / QR Code** menu.
+- **ZosiSmart / AVSS App:** Visible in the device details/settings screen.
+- **AVSS Debug Log (Windows or Wine):** When you log into the Windows **AVSS** desktop client, it queries the device list and writes the UID along with `IOTC_Connect_ByUID_Parallel` calls to `logDeBug/YYYY-MM-DD.txt` inside the AVSS installation folder.
+
 ### Environment Variables
 
 Environment variables override values in `config.json`:
