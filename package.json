@@ -1,5 +1,5 @@
 {
-  "name": "dvr-playback",
+  "name": "tutk-dvr-bridge",
   "version": "0.1.0",
   "private": true,
   "type": "module",

@@ -1,8 +1,8 @@
-name: dvr-playback
+name: tutk-dvr-bridge
 services:
-  dvr-playback:
-    image: dvr-playback:latest
-    container_name: dvr-playback
+  tutk-dvr-bridge:
+    image: tutk-dvr-bridge:latest
+    container_name: tutk-dvr-bridge
     restart: unless-stopped
     network_mode: host
     volumes:
@@ -34,10 +34,10 @@ x-casaos:
   developer: local
   icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/cctv.png
   index: /health
-  main: dvr-playback
+  main: tutk-dvr-bridge
   port_map: "3001"
   scheme: http
   tagline:
-    en_us: ZOSI/Ansjer DVR historic playback bridge
+    en_us: ZOSI/Ansjer/Cocoon DVR historic playback & live bridge
   title:
-    en_us: DVR Playback
+    en_us: TUTK DVR Bridge

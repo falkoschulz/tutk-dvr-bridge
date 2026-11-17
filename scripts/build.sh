@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Build dvr-playback Docker image (default) or local native binary (--native).
+# Build tutk-dvr-bridge Docker image (default) or local native binary (--native).
 #
 # Usage:
-#   ./scripts/build.sh                  # Build Docker image dvr-playback:latest
-#   IMAGE_TAG=myrepo/dvr:1.0 ./scripts/build.sh
+#   ./scripts/build.sh                  # Build Docker image tutk-dvr-bridge:latest
+#   IMAGE_TAG=myrepo/tutk-dvr-bridge:1.0 ./scripts/build.sh
 #   ./scripts/build.sh --native         # Build TypeScript + native/tutk_helper locally
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 NATIVE_DIR="$ROOT_DIR/native"
-IMAGE_TAG="${IMAGE_TAG:-dvr-playback:latest}"
+IMAGE_TAG="${IMAGE_TAG:-tutk-dvr-bridge:latest}"
 
 check_tutk_files() {
   local missing=0
