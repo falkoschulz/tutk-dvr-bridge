@@ -1,0 +1,21 @@
+# Dependencies & build output
+node_modules/
+dist/
+
+# Local secrets & configuration
+.env
+.env.*
+config/config.json
+
+# Proprietary ThroughTek (TUTK) SDK files & compiled native binaries
+native/libIOTCAPIs_ALL.so
+native/tutk_helper
+native/include/
+*.a
+*.so
+*.o
+TUTK_IOTC_Platform_*
+
+# OS / editor artifacts
+.DS_Store
+*.log

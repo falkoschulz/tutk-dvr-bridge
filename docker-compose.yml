@@ -1,0 +1,43 @@
+name: dvr-playback
+services:
+  dvr-playback:
+    image: dvr-playback:latest
+    container_name: dvr-playback
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - type: bind
+        source: ./config
+        target: /app/config
+    environment:
+      PORT: "3001"
+      CONFIG_PATH: /app/config/config.json
+    x-casaos:
+      envs:
+        - container: PORT
+          description:
+            en_us: HTTP/WebSocket listen port
+        - container: CONFIG_PATH
+          description:
+            en_us: Path to config.json inside container
+      volumes:
+        - container: /app/config
+          description:
+            en_us: DVR configuration directory (config.json)
+x-casaos:
+  architectures:
+    - amd64
+  author: community
+  category: Media
+  description:
+    en_us: TUTK P2P playback bridge for ZOSI/Ansjer DVR recordings (REST + fMP4 WebSocket)
+  developer: local
+  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/cctv.png
+  index: /health
+  main: dvr-playback
+  port_map: "3001"
+  scheme: http
+  tagline:
+    en_us: ZOSI/Ansjer DVR historic playback bridge
+  title:
+    en_us: DVR Playback
